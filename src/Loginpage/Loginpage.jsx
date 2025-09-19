@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import './loginpage.css';
+import backgroundImage from '../assets/tractor.jpg';
+
 const Loginpage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -8,7 +9,7 @@ const Loginpage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (email && password) {
-      alert(`Logged in with: ${email}`); // ✅ fixed template string
+      alert(`Logged in with: ${email}`);
     } else {
       alert('Please fill in all fields');
     }
@@ -16,7 +17,6 @@ const Loginpage = () => {
 
   return (
     <div className="login-page">
-      <div className="overlay"></div>
       <div className="login-container">
         <h1>Login</h1>
         <form onSubmit={handleSubmit}>

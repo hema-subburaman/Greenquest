@@ -3,8 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import './Getstarted.css';
 
 const Getstarted = () => {
+   const navigate = useNavigate();
   const handleClick = () => {
-    alert('Welcome! Get started with your journey.');
+    navigate('/loginpage');
   };
 
   return (

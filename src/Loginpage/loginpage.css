@@ -1,102 +1,99 @@
+/* Base / Mobile-first */
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   font-family: Arial, sans-serif;
 }
 
 .login-page {
-  height: 100vh;
+  min-height: 100vh;
+  width: 100vw;
   display: flex;
-  justify-content: center;   /* center horizontally */
-  align-items: center;       /* center vertically */
+  align-items: center;
+  justify-content: center;
+  background-image: url('../assets/tractor.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
   background-size: cover;
-  background-position: center;
   position: relative;
-  padding: 20px;             /* ensures spacing on very small screens */
+  padding: 20px;
 }
 
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.2);
-  z-index: 0;
-}
+
 
 .login-container {
   width: 100%;
-  max-width: 350px;
+  max-width: 360px;
+ 
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
   text-align: center;
-  color: white;
-  z-index: 1;
-  margin: 0 auto; /* fallback centering */
 }
 
-.login-container h1 {
-  margin-bottom: 20px;
-  font-size: 32px;
-  font-weight: bold;
-  color: black;
+h1 {
+  font-size: 22px;
+  color: #222;
+  margin-bottom: 16px;
 }
 
 .input-box {
   width: 100%;
-  padding: 14px;
+  padding: 12px 14px;
   margin: 10px 0;
-  border: none;
-  border-radius: 25px;
+  border-radius: 24px;
+  border: 1px solid #d6d6d6;
+  font-size: 15px;
   outline: none;
-  font-size: 16px;
-  background: white;
-  color: black;
 }
 
 .btn {
   width: 100%;
-  padding: 14px;
-  margin-top: 20px;
-  background: linear-gradient(90deg, #7b68ee, #4169e1);
-  color: white;
+  padding: 12px;
+  margin-top: 14px;
+  border-radius: 24px;
   border: none;
-  border-radius: 25px;
-  font-size: 18px;
-  font-weight: bold;
+  background: linear-gradient(90deg, #7b68ee, #4169e1);
+  color: #fff;
+  font-weight: 600;
   cursor: pointer;
-  transition: 0.3s;
 }
 
-.btn:hover {
-  opacity: 0.9;
-}
-
-.signup-text {
-  margin-top: 15px;
-  font-size: 14px;
-  color: white;
-}
-
-.signup-text a {
-  color: white;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.signup-text a:hover {
-  text-decoration: underline;
-}
-
-@media (max-width: 768px) {
+/* Tablet / small desktops */
+@media (min-width: 481px) {
   .login-container {
-    width: 80%;   /* Adjust width for tablets */
+    max-width: 420px;
+    padding: 24px;
+  }
+  h1 {
+    font-size: 24px;
+  }
+  .input-box {
+    font-size: 16px;
+    padding: 14px;
+  }
+  .btn {
+    padding: 14px;
+    font-size: 16px;
   }
 }
 
-@media (max-width: 480px) {
+/* Larger screens */
+@media (min-width: 769px) {
   .login-container {
-    width: 90%;   /* Adjust width for mobiles */
-    padding: 1.5rem;
+    max-width: 480px;
+    padding: 32px;
+  }
+  h1 {
+    font-size: 28px;
+  }
+}
+
+/* Extra-large screens */
+@media (min-width: 1200px) {
+  .login-container {
+    max-width: 540px;
   }
 }
